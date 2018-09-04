@@ -1,0 +1,57 @@
+FORMAT: 1A
+HOST: https://jsonplaceholder.typicode.com/
+
+# APITEST
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Todos Collection [/todos]
+
+### List All Todos [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+              "userId": 1,
+              "id": 1,
+              "title": "delectus aut autem",
+               "completed": false
+            },
+            {
+               "userId": 1,
+               "id": 2,
+               "title": "try",
+               "completed": true
+            }
+        ]
+
+### Create a New Todo [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+               "userId": 2,
+               "id": 3,
+               "title": "New Todo",
+               "completed": false
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /todo/2
+
+    + Body
+
+            {
+               "userId": 2,
+               "id": 3,
+               "title": "New Todo",
+               "completed": false
+            }
